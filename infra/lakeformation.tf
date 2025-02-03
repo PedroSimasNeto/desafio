@@ -1,3 +1,7 @@
+resource "aws_lakeformation_data_lake_settings" "lakeformation_data_lake_settings" {
+  admins = [data.aws_iam_session_context.current.issuer_arn]
+}
+
 resource "aws_iam_role" "lakeformation_glue_role" {
   name = "LakeFormationGlueRole"
 

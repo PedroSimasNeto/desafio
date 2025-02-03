@@ -34,7 +34,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "s3_recebimento_arquivo_desafio
 }
 
 resource "aws_s3_bucket" "data_lake_bucket" {
-  bucket = "meu-lakeformation-datalake-bucket"
+  bucket = var.s3_datalake_bucket
 
   tags = {
     Name        = "DataLakeBucket"
@@ -67,4 +67,23 @@ resource "aws_s3_bucket_lifecycle_configuration" "data_lake_bucket_lifecycle" {
       noncurrent_days = 30
     }
   }
+}
+
+
+resource "aws_s3_bucket" "script_desafio" {
+  bucket = "s3-script-desafio"
+
+  tags = {
+    Name        = "ScriptDesafio"
+    Environment = "Production"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "script_desafio_access" {
+  bucket = aws_s3_bucket.script_desafio.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }

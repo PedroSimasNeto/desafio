@@ -1,2 +1,5 @@
 aws_region  = "us-east-1"
 bucket_recebimento = "s3-recebimento-arquivo-desafio"
+glue_role = "glue-job-role"
+datalake_database = "data_lake_database"
+datalake_tabela = "data_lake_table"

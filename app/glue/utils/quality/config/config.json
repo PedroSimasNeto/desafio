@@ -1,0 +1,95 @@
+{
+    "data_product_name": "datalake",
+    "columns" : [
+        {
+            "column_name" : "timestamp",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_not_null",
+                    "rule_dimension" : "Completeness",
+                    "add_info" : {}
+                }
+            ]
+        },
+        {
+            "column_name" : "sending_address",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_not_null",
+                    "rule_dimension" : "Completeness",
+                    "add_info" : {}
+                }
+            ]
+        },
+        {
+            "column_name" : "receiving_address",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_not_null",
+                    "rule_dimension" : "Completeness",
+                    "add_info" : {}
+                }
+            ]
+        },
+        {
+            "column_name" : "transaction_type",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_values_in_list",
+                    "rule_dimension" : "Validity",
+                    "add_info" : {
+                        "value_set" : ["purchase", "phishing", "transfer", "sale", "scam"]
+                    }
+                }
+            ]
+        },
+        {
+            "column_name" : "location_region",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_values_in_list",
+                    "rule_dimension" : "Validity",
+                    "add_info" : {
+                        "value_set" : ["North America", "South America", "Europe", "Africa", "Asia"]
+                    }
+                }
+            ]
+        },
+        {
+            "column_name" : "purchase_pattern",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_values_in_list",
+                    "rule_dimension" : "Validity",
+                    "add_info" : {
+                        "value_set" : ["high_value", "focused", "random"]
+                    }
+                }
+            ]
+        },
+        {
+            "column_name" : "age_group",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_values_in_list",
+                    "rule_dimension" : "Validity",
+                    "add_info" : {
+                        "value_set" : ["new", "established", "veteran"]
+                    }
+                }
+            ]
+        },
+        {
+            "column_name" : "anomaly",
+            "dq_rule(s)" : [
+                {
+                    "rule_name" : "check_if_values_in_list",
+                    "rule_dimension" : "Validity",
+                    "add_info" : {
+                        "value_set" : ["moderate_risk", "low_risk", "high_risk"]
+                    }
+                }
+            ]
+        }
+    ]
+}
