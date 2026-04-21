@@ -3,3 +3,4 @@ infra/.terraform.lock.hcl
 myenv/
 utils.zip
 infra/lambda.zip
+docker/glue-main-local/testes/output/desafio
